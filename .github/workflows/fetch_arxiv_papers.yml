@@ -27,5 +27,5 @@ jobs:
           ARXIV_API_SERVICE_URL: ${{ secrets.ARXIV_API_SERVICE_URL }}
           ARXIV_ENABLE_AUTH: ${{ secrets.ARXIV_ENABLE_AUTH }}
           ARXIV_API_KEY: ${{ secrets.ARXIV_API_KEY }}
-          FETCH_HOURS: '24'
+          FETCH_HOURS: ${{ secrets.FETCH_HOURS }}
         run: python3 arxiv_fetch.py

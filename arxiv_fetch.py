@@ -11,7 +11,7 @@ ArXiv Paper Collector
     ARXIV_ENABLE_AUTH: 是否启用 API 认证 ('true' 或 'false')
     ARXIV_API_KEY: API 认证密钥 (当 ENABLE_AUTH 为 true 时必需)
     OUTPUT_DIR: 本地输出目录 (当 OUTPUT_MODE 为 'local' 时使用)
-    FETCH_HOURS: 获取最近多少小时的论文 (默认: 24)
+    FETCH_HOURS: 获取最近多少小时的论文 (默认: 96)
 """
 
 import json
@@ -43,7 +43,7 @@ class Config:
         self.enable_auth = os.getenv('ARXIV_ENABLE_AUTH', '').lower() == 'true'
         self.api_service_url = os.getenv('ARXIV_API_SERVICE_URL', '')
         self.output_dir = os.getenv('OUTPUT_DIR', './output')
-        self.fetch_hours = int(os.getenv('FETCH_HOURS', '24'))
+        self.fetch_hours = int(os.getenv('FETCH_HOURS', '96'))
         self.api_key = os.getenv('ARXIV_API_KEY', '')
 
     def validate(self) -> None:
