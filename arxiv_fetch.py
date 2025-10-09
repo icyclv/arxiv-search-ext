@@ -189,7 +189,7 @@ class ArxivCollector:
                 self.config.api_service_url,
                 data=json.dumps({'papers': papers}, separators=(',', ':')),
                 headers=headers,
-                timeout=90
+                timeout=160
             )
             response.raise_for_status()
             logger.info(f"Successfully sent {len(papers)} papers to API service")
